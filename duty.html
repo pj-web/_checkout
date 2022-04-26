@@ -47,3 +47,29 @@ Email này được gửi tới <a style="text-decoration: none; color: #5B9CF6;
 {% else %}
 This email was sent to <a style="text-decoration: none; color: #5B9CF6;" href="mailto:{{contact.3}}">{{contact.3}}</a> because on {{contact.522}}, you signed up at <a style="text-decoration: none; color: #5B9CF6;" href="https://www.tradingview.com/" target="_blank">TradingView.com</a>. If you don't want to receive this type of emails anymore, you can <a style="text-decoration: none; color: #5B9CF6;" href="https://www.tradingview.com/accounts/subscriptions/?k={{contact.688}}&contact_uid={{contact.uid}}&email_id=$cid$&launch_list_id=$llid$" target="_blank">unsubscribe</a> at any time.
 {% endif %}
+
+{% if event.payment_method == 'credit card' %}
+    {% if event.order_stack[0].card_type =='' %}
+        Credit Card
+    {% else %}
+        {{event.order_stack[0].card_type}} &mdash; {{event.order_stack[0].card_last_digit}}
+    {% endif %}
+{% elseif event.payment_method == 'reference credit card' %}
+    {% if event.order_stack[0].card_type =='' %}
+        Credit Card
+    {% else %}
+        {{event.order_stack[0].card_type}} &mdash; {{event.order_stack[0].card_last_digit}}
+    {% endif %}
+{% elseif event.payment_method == 'express checkout' %}
+    PayPal
+{% elseif event.payment_method == 'reference express checkout' %}
+    PayPal
+{% elseif event.payment_method == 'coinbase' %}
+    Coinbase
+{% else %}
+    {% if event.payment_method =='' %}
+        &mdash;
+    {% else %}
+        {{event.order_stack[0].card_type}} &mdash; {{event.order_stack[0].card_last_digit}}
+    {% endif %}
+{% endif %}
