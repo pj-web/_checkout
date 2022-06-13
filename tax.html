@@ -1,0 +1,90 @@
+{{ rds.tradingview.orders_view_currency(event.order_id)[0].currency }} {{ rds.tradingview.orders(event.order_id)[0].taxes }}  
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">    
+  <tr>
+      <td align="center" style="padding: 0px 10px 0px 10px;">
+          <!--[if (gte mso 9)|(IE)]>
+          <table align="center" border="0" cellspacing="0" cellpadding="0" width="600">
+          <tr>
+          <td align="center" valign="top" width="600">
+          <![endif]-->
+              <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+                  <tr>
+                      <td align="left" valign="top" style="border-radius: 0px; text-align: left;">
+                          <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                              <tr>
+                                  <td valign="top">
+                                      <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                          <tr>
+                                              <td valign="top" width="80%">
+                                                  <p e-editable="text1" style="
+                                                      margin: 0px 5px 8px 0px;
+                                                      padding: 0px;
+                                                      font-family: 'Trebuchet MS', Helvetica, Arial, sans-serif; 
+                                                      font-size: 14px; 
+                                                      line-height: 21px; 
+                                                      color: #5d606b;
+                                                  ">
+                                                      Product
+                                                  </p>
+                                              </td>
+                                              <td valign="top" align="left" width="20%">
+                                                  <p e-editable="text2" style="
+                                                      margin: 0px 5px 8px 0px;
+                                                      padding: 0px;
+                                                      font-family: 'Trebuchet MS', Helvetica, Arial, sans-serif; 
+                                                      font-size: 14px; 
+                                                      line-height: 21px; 
+                                                      color: #5d606b;text-align:left;
+                                                  ">
+                                                      Price
+                                                  </p>
+                                              </td>
+                                          </tr>
+                                      </table>
+                                      <div e-editable="items">
+                                          Order items
+                                      </div>
+                                      {% if rds.tradingview.orders(event.order_id)[0].taxes == '' %}
+                                      &nbsp;
+                                      {% else %}
+                                      <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                        <tr>
+                                            <td colspan="2" height="24" style="border-top: 1px solid #F0F3FA;font-size:24px; line-height:24px;">&nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                          <td valign="top" align="left" style="width: 80%"></td>
+                                          <td valign="top" align="left" style="width: 20%">
+                                          <p e-editable="text3" style="
+                                                    margin: 0px 5px 0px 0px;
+                                                    padding: 0px;
+                                                    font-family: 'Trebuchet MS', Helvetica, Arial, sans-serif; 
+                                                    font-size: 18px; 
+                                                    line-height: 26px; 
+                                                    color: #131722;
+                                                                            
+                                                ">
+                                                    Tax: {{ rds.tradingview.orders_view_currency(event.order_id)[0].currency }} {{ rds.tradingview.orders(event.order_id)[0].taxes }}
+                                            </p></td>
+                                        </tr>
+                                    </table>
+                                      {% endif %}
+
+
+                                      
+                                  </td>
+                              </tr>
+                          </table>
+                      </td>
+                  </tr>
+              </table>
+          <!--[if (gte mso 9)|(IE)]>
+          </td>
+          </tr>
+          </table>
+          <![endif]-->
+      </td>
+  </tr>
+</table>
