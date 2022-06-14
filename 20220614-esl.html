@@ -1,0 +1,57 @@
+
+{% foreach ticker in rds.tradingview.user2ideas(contact.561) %}
+
+<table width="100%" cellpadding="0" cellspacing="0">
+	<tr>
+		<td class="plr-15" style="padding: 25px 40px;">
+        
+			{{ticker.name}}<br><br>"{{ticker.description_short}}"<br><br>
+		{{ticker.idea_url}}
+       
+        
+        </td>
+	</tr>
+</table>
+
+{% endforeach %}
+
+
+{% foreach ticker in rds.tradingview.user2scripts(contact.561) %}
+
+<table width="100%" cellpadding="0" cellspacing="0">
+	<tr>
+		<td class="plr-15" style="padding: 25px 40px;">
+        
+			{{ticker.script_title}}<br><br>{{ticker.description_short}}<br><br>
+		{{ticker.script_url}}
+       
+        
+        </td>
+	</tr>
+</table>
+
+{% endforeach %}
+
+
+{% foreach idea in rds.tradingview.user2ideas(contact.561) %}
+<table width="100%" cellpadding="0" cellspacing="0">
+	<tr>
+		<td class="plr-15" style="padding: 25px 40px;">
+			{{idea.name}}<br><br>"{{idea.description_short}}"<br><br>
+		{{idea.idea_url}}
+        </td>
+	</tr>
+</table>
+{% endforeach %}
+
+
+{% foreach idea in rds.tradingview.user2ideas(contact.561) %}
+<table width="100%" cellpadding="0" cellspacing="0">
+	<tr>
+		<td class="plr-15" style="padding: 25px 40px;">
+			{{idea.name}}<br><br>"{{idea.description_short}}"<br><br>
+		{{idea.idea_url}}
+        </td>
+	</tr>
+</table>
+{% endforeach %}
