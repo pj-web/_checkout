@@ -73,6 +73,46 @@
                                       {% endif %}
 
 
+
+
+                                      
+
+
+
+                                      {% if rds.tradingview.orders_taxes(event.order_id)[0].taxes == '' %}
+                                      &nbsp;
+                                      {% else %}
+                                      <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                        <tr>
+                                            <td colspan="2" height="24" style="border-top: 1px solid #F0F3FA;font-size:24px; line-height:24px;">&nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                          <td valign="top" align="left" style="width: 70%">&nbsp;</td>
+                                          <td valign="top" align="left" style="width: 30%">
+                                          <p e-editable="text3" style="
+                                                    margin: 0px 5px 0px 0px;
+                                                    padding: 0px;
+                                                    font-family: 'Trebuchet MS', Helvetica, Arial, sans-serif; 
+                                                    font-size: 18px; 
+                                                    line-height: 26px; 
+                                                    color: #131722;
+                                                                            
+                                                ">
+                                                    Tax: {{ rds.tradingview.orders_view_currency(event.order_id)[0].currency }} {{ rds.tradingview.orders_taxes(event.order_id)[0].taxes }}
+                                            </p></td>
+                                        </tr>
+                                    </table>
+                                      {% endif %}
+
+
+                                      {{ rds.tradingview.orders_view_currency(event.order_id)[0].currency }} {{event.total}}
+
+
+
+
+
+
+
                                       
                                   </td>
                               </tr>
